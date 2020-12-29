@@ -1,0 +1,69 @@
+/* clase contenedora */
+.contenedor {
+  display: flex;
+  flex-direction: row; /*enseño los elementos uno al lado del otro */
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+}
+
+/* clases hijas del contenedor */
+.header,
+.articulo,
+.izquierda,
+.derecha,
+.footer {
+  flex-grow: 1; /*para que abarque el 100% */
+  flex-basis: 100%;
+  padding: 10px;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 1; /* flex-grow:1, flex-shrink:1 y flex-basis: auto; */
+  }
+}
+
+@media all and (min-width: 800px) {
+  .articulo {
+    flex: 4 2;
+  }
+
+  .aside {
+    flex: 1.5 1;
+  }
+  /* establezco el orden para ordenar los elementos de la pagina con 'order' */
+  .izquierda {
+    order: 1;
+  }
+  .articulo {
+    order: 2;
+  }
+  .derecha {
+    order: 3;
+  }
+  .footer {
+    order: 4;
+  }
+}
+
+/* fondos sólidos */
+
+.header {
+  background: #d685be;
+}
+
+.articulo {
+  background: #ffc300;
+}
+
+.izquierda {
+  background: #900c3f;
+}
+
+.derecha {
+  background: #c70039;
+}
+.footer {
+  background: #daf7a6;
+}
